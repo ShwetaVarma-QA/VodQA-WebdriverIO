@@ -3,18 +3,8 @@ import LoginScreen from '../screenobjects/login.screen';
 
 describe('WebdriverIO and Appium, when interacting with a login form,', () => {
 
-    // //using className
-    // const className = $('.ClassNameValue')
-    //
-    // //using ID
-    // const id = $('#idValue')
-    //
-    // //using link text
-    // const text = $('tagName=TextValue')
 
     beforeEach(() => {
-        // browser.enablePerformanceAudits()
-        // browser.
         TabBar.waitForTabBarShown(true);
         TabBar.openLogin();
         LoginScreen.waitForIsShown(true);

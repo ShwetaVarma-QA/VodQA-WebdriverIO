@@ -1,8 +1,9 @@
+const { join } = require('path');
+
 exports.config = {
     // ====================
     // Runner Configuration
     // ====================
-
     runner: 'local',
 
     // ==================
@@ -32,7 +33,7 @@ exports.config = {
     // ===================
 
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'silent',
+    logLevel: 'info',
 
     // run your tests until a specific amount of tests have failed use bail
     bail: 0,
@@ -51,7 +52,33 @@ exports.config = {
     connectionRetryCount: 3,
 
     // Test runner services
-    services: ['chromedriver'],
+    services: ['chromedriver', 'devtools', [ 'image-comparison',
+        // The options
+        {
+            // Some options, see the docs for more
+            baselineFolder: join(process.cwd(), './baseline/'),
+            formatImageName: '{tag}-{logName}-{width}x{height}',
+            screenshotPath: join(process.cwd(), './baseline/'),
+            savePerInstance: true,
+            autoSaveBaseline: true,
+            blockOutStatusBar: true,
+            blockOutToolBar: true,
+            // NOTE: When you are testing a hybrid app please use this setting
+            isHybridApp: true,
+            // Options for the tabbing image
+            tabbableOptions:{
+                circle:{
+                    size: 18,
+                    fontSize: 18,
+                    // ...
+                },
+                line:{
+                    color: '#ff221a', // hex-code or for example words like `red|black|green`
+                    width: 3,
+                },
+            }
+            // ... more options
+        }]],
 
     // Framework supported: Mocha, Jasmine, and Cucumber
     framework: 'mocha',

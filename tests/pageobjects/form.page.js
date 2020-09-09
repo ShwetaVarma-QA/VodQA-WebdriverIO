@@ -1,22 +1,5 @@
 import Page from './page';
 
-// const SELECTORS = {
-//     USERNAME: {
-//         web: '#username',
-//         android: '~username',
-//         ios: '~username'
-//     },
-//     PASSWORD: {
-//         web: '#password',
-//         android: '~password',
-//         ios: '~password'
-//     }
-//
-//
-//
-// }
-
-
 class FormPage extends Page {
     /**
      * define elements
@@ -32,6 +15,12 @@ class FormPage extends Page {
 
     submit () {
         this.submitButton.click();
+    }
+    setUserName(value){
+        this.username.setValue(value)
+    }
+    setPWD(pwd){
+        this.password.setValue(pwd)
     }
 }
 
