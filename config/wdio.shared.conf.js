@@ -19,7 +19,11 @@ exports.config = {
     waitforTimeout: 10000,
     connectionRetryTimeout: 90000,
     connectionRetryCount: 3,
-    reporters: ['spec'],
+    reporters: [['allure', {
+        outputDir: 'allure-results',
+        disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: true,
+    }]],
 
     // ====================
     // Appium Configuration
@@ -28,12 +32,6 @@ exports.config = {
         [
             'appium',
             {
-                // For options see
-                // https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-appium-service
-                args: {
-                    // For arguments see
-                    // https://github.com/webdriverio/webdriverio/tree/master/packages/wdio-appium-service
-                },
                 command: 'appium',
             },
         ],

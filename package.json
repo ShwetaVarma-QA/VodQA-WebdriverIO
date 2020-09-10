@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ios.browser": "./node_modules/.bin/wdio ./config/wdio.ios.browser.conf.js"
+    "ios.browser": "./node_modules/.bin/wdio ./config/wdio.ios.browser.conf.js",
+    "desktop.browser": "./node_modules/.bin/wdio config/wdio.browser.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "@wdio/devtools-service": "^6.4.6",
     "@wdio/local-runner": "^6.4.0",
     "@wdio/mocha-framework": "^6.4.0",
+    "@wdio/sauce-service": "^6.4.7",
     "@wdio/spec-reporter": "^6.4.0",
     "@wdio/sync": "^6.4.0",
     "chromedriver": "^84.0.1",
