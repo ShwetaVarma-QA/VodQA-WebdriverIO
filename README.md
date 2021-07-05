@@ -1,6 +1,6 @@
 # VodQA-WebdriverIO
 
-##pre requisite 
+## pre requisite 
     - Install Node (most suitable version is 12.18.2)
     - If you want to execute on Virtual Devices have it installed
 
@@ -16,7 +16,3 @@
     - Verify the path of spec file you want to execute in config file
     - Run the script
         'npx wdio wdio.conf.js'
-   
-
-
-     
